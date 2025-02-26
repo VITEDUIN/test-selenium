@@ -22,7 +22,11 @@ public class TestHelloworld {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Student\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe" );
 	     // Instantiate a ChromeDriver class.     
         WebDriver driver=new ChromeDriver();  
-          
+           // Setup ChromeOptions
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--headless");  // Remove this if running in non-headless mode
+        options.addArguments("--disable-gpu");
            // Launch Website  
         driver.navigate().to("http://www.javatpoint.com/");  
           
