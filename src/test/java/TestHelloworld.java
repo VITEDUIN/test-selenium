@@ -19,7 +19,7 @@ public class TestHelloworld {
 		//dummy test case
 		System.out.println("Hello world test 2 ");
 		
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Student\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe" );
+		System.setProperty("webdriver.chrome.driver","chromedriver.exe" );
 	     // Instantiate a ChromeDriver class.     
         WebDriver driver=new ChromeDriver();  
        
