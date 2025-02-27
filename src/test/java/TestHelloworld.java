@@ -21,8 +21,16 @@ public class TestHelloworld {
 		
 		System.setProperty("webdriver.chrome.driver","chromedriver.exe" );
 	     // Instantiate a ChromeDriver class.     
-        WebDriver driver=new ChromeDriver();  
-       
+       // WebDriver driver=new ChromeDriver();  
+       ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");  // Ensure Chrome is headless
+	options.addArguments("--disable-gpu");  // Disable GPU hardware acceleration
+	options.addArguments("--no-sandbox");  // Disable sandboxing (especially needed for CI environments)
+	options.addArguments("window-size=1200x600");  // Optional: specify a window size
+	WebDriver driver = new ChromeDriver(options);
+		options.addArguments("--remote-debugging-port=9222");  // Specify a debugging port for CDP connection
+		options.addArguments("--disable-dev-shm-usage");  // Disable shared memory usage for certain environments (like Docker or Jenkins)
+
            // Launch Website  
         driver.navigate().to("http://www.javatpoint.com/");  
           
